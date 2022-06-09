@@ -161,7 +161,7 @@
         <repository>
           <id>commons</id>
           <name>commons</name>
-          <url>https://maven.pkg.github.com/everisopennetworks/ffm-ne-back-jv-lib-commons</url>
+          <url>https://maven.pkg.github.com/juandiaz9102/reto-final</url>
         </repository>
       </distributionManagement>
 	
