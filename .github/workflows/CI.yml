@@ -45,7 +45,7 @@ jobs:
         uses: s4u/maven-settings-action@v2.1.1
       - name: Publish package
         env:
-          GITHUB_USERNAME: ${{ secrets.TOKEN_GITHUB }}
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: mvn deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/everisopennetworks/ffm-ne-back-jv-lib-commons'
 
