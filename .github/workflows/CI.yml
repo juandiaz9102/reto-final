@@ -31,7 +31,7 @@ jobs:
 
   publish-artifact:
     runs-on: ubuntu-latest
-    needs: [unit-test, sonarqube]
+    needs: [unit-test] #, sonarqube
     permissions: 
       contents: read
       packages: write
@@ -45,7 +45,7 @@ jobs:
         uses: s4u/maven-settings-action@v2.1.1
       - name: Publish package
         env:
-          GITHUB_USERNAME: ${{ secrets.USER_NAME }}
+          GITHUB_USERNAME: ${{ secrets.TOKEN_GITHUB }}
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: mvn deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/everisopennetworks/ffm-ne-back-jv-lib-commons'
 
