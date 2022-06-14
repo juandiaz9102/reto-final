@@ -33,7 +33,6 @@ jobs:
         uses: s4u/maven-settings-action@v2.1.1
       - name: Publish package
         env:
-
           USSER: ${{ secrets.USSER }}
           TOKEN: ${{ secrets.TOKEN }}
         run: mvn deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/juandiaz9102/reto-final'
