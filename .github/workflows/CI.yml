@@ -38,5 +38,4 @@ jobs:
         env:
           USSER: ${{ secrets.USSER }}
           TOKEN: ${{ secrets.TOKEN }}
-        run: mvn -e deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/juandiaz9102/reto-final'
-      - run: mvn -x deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/juandiaz9102/reto-final'
+        run: mvn -e -x deploy -DuniqueVersion=false -Dmaven.source.useDefaultManifestFile=true -Dmaven.source.includePom=true -DaltDeploymentRepository='github::default::https://maven.pkg.github.com/juandiaz9102/reto-final'
