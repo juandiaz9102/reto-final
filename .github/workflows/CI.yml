@@ -13,8 +13,12 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+        env:
+          USSER: ${{ secrets.USSER }}
+          TOKEN: ${{ secrets.TOKEN }}
       - name: Test
         run: mvn --batch-mode test
+        
 
   publish-artifact:
     runs-on: ubuntu-latest
